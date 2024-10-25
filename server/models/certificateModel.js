@@ -2,6 +2,9 @@ import mongoose from "mongoose";
 
 const certificateSchema = new mongoose.Schema(
     {
+        certificateId:{
+            type: String
+        },
         studentName: {
             type: String,
             required: [true, "Please provide your name"],
