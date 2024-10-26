@@ -19,7 +19,6 @@ export default function Navbar() {
 
     if (!isAuthenticated) {
         NAV_ITEMS.push(
-            { name: 'Login', path: '/login' },
             { name: 'Register', path: '/register' },
         )
     } else if (isAuthenticated && user.role === 'job-seeker') {

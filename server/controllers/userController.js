@@ -4,9 +4,9 @@ import jwt from "jsonwebtoken";
 
 // make a register controller
 export const register = async (req, res) => {
-    const { fullName, role, email, password } = req.body;
+    const { fullName, email, password } = req.body;
     // console.log(req.body);
-    if (!fullName || !role || !email || !password) {
+    if (!fullName || !email || !password) {
         return res.status(400).json({ error: 'Please provide all fields' });
     }
 
@@ -19,8 +19,8 @@ export const register = async (req, res) => {
 
     // save the user
     const user = await User.create({
-        fullName,
-        role,
+        name: fullName,
+        role: 'student',
         email,
         password: hashedPassword,
     });

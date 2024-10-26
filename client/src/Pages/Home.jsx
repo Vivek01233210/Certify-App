@@ -46,15 +46,13 @@ export default function Home() {
       <header className="bg-indigo-600 text-white py-12 -mt-2">
         <div className="container mx-auto text-center">
           <h1 className="text-4xl font-bold mb-4">Welcome to Certify</h1>
-          {/* <p className="text-lg mb-6">Find your certificate here.</p> */}
-          {!isAuthenticated &&
-            <Link to="/register" className="bg-white text-indigo-600 font-semibold py-2 px-4 rounded hover:bg-gray-200">
-              Get Started
+          <p className="text-lg mb-6">Streamline the process of issuing and verifying internship certificates.</p>
+          <div className="flex justify-center space-x-4">
+            <Link to="/login" className="bg-white text-indigo-600 font-semibold py-2 px-4 rounded hover:bg-gray-200">
+              Login
             </Link>
-          }
-          <input type="file" accept=".xlsx, .xls" onChange={handleFileChange} />
-          <button onClick={handleUpload}>Upload</button>
-          {message && <p>{message}</p>}        </div>
+          </div>
+        </div>
       </header>
 
       {/* Features Section */}
@@ -63,31 +61,18 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-8">Features</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded shadow-md">
-              <h3 className="text-xl font-semibold mb-4">Job Search</h3>
-              <p className="text-gray-700">Easily search for jobs that match your skills and preferences.</p>
+              <h3 className="text-xl font-semibold mb-4">Easy Upload</h3>
+              <p className="text-gray-700">Admins can easily upload student data via Excel sheets.</p>
             </div>
             <div className="bg-white p-6 rounded shadow-md">
-              <h3 className="text-xl font-semibold mb-4">Apply Online</h3>
-              <p className="text-gray-700">Submit your applications directly through our platform.</p>
+              <h3 className="text-xl font-semibold mb-4">Quick Verification</h3>
+              <p className="text-gray-700">Students can quickly verify their certificates using their certificate ID.</p>
             </div>
             <div className="bg-white p-6 rounded shadow-md">
-              <h3 className="text-xl font-semibold mb-4">Employer Search</h3>
-              <p className="text-gray-700">Employers can find the best candidates for their job openings.</p>
+              <h3 className="text-xl font-semibold mb-4">Download Certificates</h3>
+              <p className="text-gray-700">Students can download their certificates with all relevant information prefilled.</p>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Call to Action Section */}
-      <section className="bg-indigo-600 text-white py-12">
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4">Ready to get started?</h2>
-          <p className="text-lg mb-6">Join us today and take the first step towards your dream job or finding the perfect candidate.</p>
-          {!isAuthenticated &&
-            <Link to="/register" className="bg-white text-indigo-600 font-semibold py-2 px-4 rounded hover:bg-gray-200">
-              Register Now
-            </Link>
-          }
         </div>
       </section>
     </div>
