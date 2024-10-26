@@ -3,7 +3,8 @@ import mongoose from "mongoose";
 const certificateSchema = new mongoose.Schema(
     {
         certificateId:{
-            type: String
+            type: String,
+            required: true
         },
         studentName: {
             type: String,
@@ -11,7 +12,7 @@ const certificateSchema = new mongoose.Schema(
         },
         domain: {
             type: String,
-            enum: ["Web Development", "UI/UX Design", "Machine Learning", "Cyber Security"],
+            // enum: ["Web Development", "UI/UX Design", "Machine Learning", "Cyber Security"],
             required: [true, "Please provide your domain"],
         },
         duration: {
@@ -33,6 +34,6 @@ const certificateSchema = new mongoose.Schema(
     }
 );
 
-const Certificate = mongoose.model("User", certificateSchema);
+const Certificate = mongoose.model("Certificate", certificateSchema);
 
 export default Certificate;
