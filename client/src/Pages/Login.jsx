@@ -40,7 +40,7 @@ export default function Login() {
 
     return (
         <section className="container mx-auto py-6 max-w-sm">
-            <div className='p-4 rounded-lg shadow-xl'>
+            <div className='my-16 p-4 rounded-lg shadow-xl'>
 
                 <h1 className='text-center my-4 text-2xl font-bold'>Login to continue</h1>
                 <form onSubmit={handleSubmit}>

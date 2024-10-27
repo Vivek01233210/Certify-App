@@ -9,6 +9,7 @@ import mongoSanitize from 'express-mongo-sanitize';
 
 import userRouter from './routes/userRoutes.js';
 import fileRouter from './routes/fileRouter.js';
+import certificateRouter from './routes/certificateRouter.js';
 
 const app = express();
 
@@ -38,6 +39,7 @@ app.get('/', (req, res) => {
 
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/file-upload", fileRouter);
+app.use("/api/v1/certificates", certificateRouter);
 
 // NOT FOUND MIDDLEWARE
 app.use('*', (req, res) => {
