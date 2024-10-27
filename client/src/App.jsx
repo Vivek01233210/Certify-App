@@ -9,6 +9,8 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { setUser } from './redux/slices/authSlice.js';
 import { ImSpinner8 } from 'react-icons/im';
+import StudentDashboard from './Pages/Dashboard/StudentDashboard.jsx';
+import AdminDash from './Pages/Dashboard/AdminDash.jsx';
 
 
 function App() {
@@ -37,6 +39,8 @@ function App() {
         { index: true, element: <Home /> },
         { path: 'login', element: <Login /> },
         { path: 'register', element: <Register /> },
+        { path: 'dashboard', element: <StudentDashboard /> },
+        { path: 'dashboards', element: <AdminDash /> },
       ]
     },
   ]);

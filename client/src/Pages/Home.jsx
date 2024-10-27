@@ -8,36 +8,7 @@ export default function Home() {
   const [file, setFile] = useState(null);
   const [message, setMessage] = useState('');
 
-  // Handle file selection
-  const handleFileChange = (event) => {
-    setFile(event.target.files[0]);
-  };
-
-  // Upload file to backend
-  const handleUpload = async () => {
-    if (!file) {
-      setMessage('Please select a file!');
-      return;
-    }
-
-    // console.log(file)
-
-    const formData = new FormData();
-    formData.append('file', file);
-
-    try {
-      const response = await fetch('http://localhost:5000/api/v1/file-upload', {
-        method: 'POST',
-        body: formData,
-      });
-
-      const result = await response.json();
-      setMessage(result.message || 'File uploaded successfully!');
-    } catch (error) {
-      setMessage('Error uploading file');
-      console.error('Error:', error);
-    }
-  };
+  
 
 
   return (

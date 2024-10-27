@@ -99,7 +99,7 @@ export const checkUser = async (req, res, next) => {
         const user = {
             _id: currentUser._id,
             role: currentUser.role,
-            fullName: currentUser.fullName,
+            fullName: currentUser.name,
             email: currentUser.email
         }
 
