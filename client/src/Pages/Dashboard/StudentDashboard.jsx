@@ -1,18 +1,35 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
+// import { downloadCertificateAPI } from '../../APIServices/certificateAPI.js';
+// import { useQuery } from '@tanstack/react-query';
 
 export default function StudentDashboard() {
     const [certificateId, setCertificateId] = useState('');
     const [message, setMessage] = useState('');
-    const {user} = useSelector((state) => state.auth);
+    const { user } = useSelector((state) => state.auth);
+
+    // const { refetch, data } = useQuery({
+    //     queryKey: ['get-certificate', certificateId],
+    //     queryFn: () => downloadCertificateAPI(certificateId),
+    //     enabled: false, // Disable automatic execution
+    // });
+
+    // console.log(data)
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch(`http://localhost:5000/api/v1/file-upload/${certificateId}`);
+            const response = await fetch(`http://localhost:5000/api/v1/certificate/${certificateId}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/pdf',
+                },
+            });
+
             if (response.ok) {
-                const data = await response.json();
-                setMessage('Certificate found!');
+                const blob = await response.blob();
+                const blobUrl = URL.createObjectURL(blob);
+                window.open(blobUrl, '_blank');
             } else {
                 setMessage('Certificate not found');
             }

@@ -5,6 +5,7 @@ import Certificate from '../models/certificateModel.js';
 export const generateCertificate = async (req, res) => {
     try {
         const { certificateId } = req.params;
+        console.log(certificateId)
         const certificate = await Certificate.findOne({ certificateId });
 
         if (!certificate) {
