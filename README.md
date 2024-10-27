@@ -1,18 +1,18 @@
-# Job-Listing-Portal
+# Certify-App
 
 ## Description
-Our Job Listing Portal is a dynamic web application designed to connect job seekers with potential employers efficiently. It features a clean and intuitive interface where users can easily search for job openings across various industries. Employers can create detailed job listings, specifying qualifications, responsibilities, and company information. Job seekers can create profiles, upload resumes, and apply for jobs directly through the portal. The portal offers advanced search filters, including job type, location, and salary range, to help users find the perfect match. With real-time notifications, both employers and applicants stay updated on application statuses. Secure user authentication ensures data privacy and protection. The portal also includes a dashboard for users to manage their job 
-postings and applications seamlessly
+The Certificate Verification System is designed to streamline the process of issuing and verifying internship certificates. This web application enables administrators to upload student data via an Excel sheet, which includes details such as certificate ID, student name, internship domain, and internship start and end dates. Once the data is uploaded, students can search for their certificate using their certificate ID. The system then displays their certificate with all the relevant information prefilled and allows students to download it. This project leverages the MERN stack (MongoDB, Express.js, React.js, and Node.js) to ensure efficient data handling and a seamless user experience.
 
 ## Features
-- Feature 1
-- Feature 2
-- Feature 3
+- Administrator can upload bulk student data in excel file.
+- Certificate Generation - Automatically populate certificates with student information.
+- All student information and certificates are securely stored in a MongoDB database.
+- Encrypted login and access controls
 
 ## Installation
 1. Clone the repository:
     ```sh
-    git clone https://github.com/Vivek01233210/Project-Job-Listing-Portal
+    git clone https://github.com/Vivek01233210/Certify-App
     ```
 3. Install dependencies run the command at the root of the project to install all the dependencies:
     ```sh
@@ -22,5 +22,3 @@ postings and applications seamlessly
     ```sh
     npm run dev
     ```
-
-## Usage
