@@ -26,11 +26,10 @@ export default function Login() {
             email,
             password
         };
-        // console.log('Form Data Submitted:', formData);
+
         loginMutation
             .mutateAsync(formData)
             .then((data) => dispatch(setUser(data)))
-            // .then((data) => console.log(data))
             .then(() => navigate("/dashboard"))
             .then(() => toast.success("User logged in successfully! 😊"))
             .catch((err) => toast.error(err.response.data.error));

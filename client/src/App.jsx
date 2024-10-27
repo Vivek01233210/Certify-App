@@ -11,6 +11,7 @@ import { setUser } from './redux/slices/authSlice.js';
 import { ImSpinner8 } from 'react-icons/im';
 import StudentDashboard from './Pages/Dashboard/StudentDashboard.jsx';
 import AdminDash from './Pages/Dashboard/AdminDash.jsx';
+import Dashboard from './Pages/Dashboard/Dashboard.jsx';
 
 
 function App() {
@@ -39,8 +40,7 @@ function App() {
         { index: true, element: <Home /> },
         { path: 'login', element: <Login /> },
         { path: 'register', element: <Register /> },
-        { path: 'dashboard', element: <StudentDashboard /> },
-        { path: 'dashboards', element: <AdminDash /> },
+        { path: 'dashboard', element: <Dashboard /> },
       ]
     },
   ]);

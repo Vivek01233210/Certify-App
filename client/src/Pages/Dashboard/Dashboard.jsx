@@ -1,9 +1,9 @@
 import { Navigate } from 'react-router-dom';
-import JobSeekerDash from './JobSeekerDash.jsx';
-import EmployerDash from './EmployerDash.jsx';
 import { checkUserAPI } from '../../APIServices/userAPI.js';
 import { useQuery } from '@tanstack/react-query';
 import { ImSpinner8 } from 'react-icons/im';
+import StudentDashboard from './StudentDashboard.jsx';
+import AdminDash from './AdminDash.jsx';
 
 export default function Dashboard() {
 
@@ -20,10 +20,10 @@ export default function Dashboard() {
         </div>
     );
 
-    if (data?.isAuthenticated && data?.user?.role === 'job-seeker') {
-        return <JobSeekerDash />
-    } else if (data?.isAuthenticated && data?.user.role === 'employer') {
-        return <EmployerDash />
+    if (data?.isAuthenticated && data?.user?.role === 'student') {
+        return <StudentDashboard />
+    } else if (data?.isAuthenticated && data?.user.role === 'admin') {
+        return <AdminDash />
     } else {
         return <Navigate to="/dashboard" />
     }
